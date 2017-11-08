@@ -15,3 +15,5 @@ Symbol(react.coroutine)
 Symbol(react.yield)
 
 Symbol(react.portal)
+
+string
