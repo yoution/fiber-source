@@ -19,7 +19,7 @@ invokeGuardedCallback函数调用回调函数`workLoop`，`commitAllHostEffects`
 ```
 
 ## workLoop
-![fiber-trees](./_image/trees.png)   
+![fiber-trees](./image/trees.png)   
 图中有3个react对象，componetA，componentB，componentC，componentB包含componentC。   
 ### 创建fiber树
 startWork创建fiber树，深度遍历jsx生成的component树，实例化component后生成对应的fiber树，直至叶子节点，不同的component类型创建对应的fiber节点，fiber节点形成关联关系，如父子关系，兄弟关系;
@@ -39,7 +39,7 @@ component的实例化过程，父fiber根据不同的fiber.tag，执行不同的
 effectTag，是二进制位构成的标记位，在`startWork`过程中生成，如instant含有componentDidMount函数，含有ref，会分别打上不同的标记位，供commit过程使用。
 effect树的创建过程沿着`startWork`遍历的逆序遍历，每一个fiber在`completeWork`后，如果当前fiber含有effectTag，则将当前fiber加入fiber树中。
 effect树的最终结果，就相当于沿着component树做的中序遍历。
-![effect](./_image/effect.png)   
+![effect](./image/effect.png)   
 * effect tree1: 是根据fiber tree生成的完整effect tree，假设所有的fiber都含有effectTag 
 * effect tree2: 是根据fiber tree生成的不完整effect tree，假设componentA没有componetDidMount方法，没有ref，componentB的div没有ref，所以不会生成effectTag
 
