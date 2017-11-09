@@ -30,32 +30,32 @@ fiber
 ## fiber 类型
 fiber根据component类型生成对应的fiber类型
 
-## IndeterminateComponent
+### IndeterminateComponent
 
 
-## FunctionalComponent
+### FunctionalComponent
 
 
-## ClassComponent
+### ClassComponent
 type为function,react对象
 
-## HostRoot
+### HostRoot
 根fiber，无对应的component
 
-## HostComponent
+### HostComponent
 type为string,如div，span
-## HostText
+### HostText
 
-## CoroutineHandlerPhase
-
-
-## CoroutineComponent
+### CoroutineHandlerPhase
 
 
-## YieldComponent
+### CoroutineComponent
 
 
-## HostPortal
+### YieldComponent
 
 
-## Fragment
+### HostPortal
+
+
+### Fragment
