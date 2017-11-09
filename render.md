@@ -19,6 +19,7 @@ invokeGuardedCallback函数调用回调函数`workLoop`，`commitAllHostEffects`
 ```
 
 ## workLoop
+示例图:   
 ![fiber-trees](./image/trees.png)   
 图中有3个react对象，componetA，componentB，componentC，componentB包含componentC。   
 ### 创建fiber树
