@@ -53,5 +53,5 @@ effect树的最终结果，就相当于沿着component树做的后序遍历。
 重新沿着effect树进行遍历，根据fiber的effectTag的值进行对应的操作。   
 每一个fiber依次进行
 1. **commitAttachRef**，处理component上的ref值   
-2. **commitLifeCycles**, 执行componentDidMount
+2. **commitLifeCycles**, 执行componentDidMount，处理ref
 
