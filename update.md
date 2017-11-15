@@ -50,7 +50,7 @@
       * 如果map中存在
         * 如果type相同，复制子fiber，同时备份子fiber，把map中的子fiber删除
         * 如果type不同，则为新的子component生成fiber
-      * 如果map中不存在，为新的子component生成fiber，为新的fiber打上插入effectTag
+      * 如果map中不存在，为新的子component生成fiber，为新的fiber打上插入effectTag    
       如果map中还有未删除的子fiber，为该子fiber打上删除effectTag，将他们加入effect树
 
 ### 更新dom树
