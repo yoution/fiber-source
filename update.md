@@ -32,7 +32,7 @@
   * 如果不同，进行子component的diff
 * ...
 
-### 子component的diff过程
+#### 子component的diff过程
 老的子component已经存在子fiber，新的component会通过比较key和type，生成新的子fiber，比较过程：
 * 子component为新增的，为新的子component生成fiber，同[`render`](./render.md)流程创建fiber树
 * 子component为删除的，为子fiber和子fiber的兄弟fiber打上删除effectTag，并加入effect树
@@ -41,19 +41,18 @@
     * 如果key相同
       * 如果type相同, 复制子fiber，同时备份子fiber
       * 如果type不同，为子fiber和子fiber的兄弟fiber打上删除effectTag，将它们加入effect树，为新的子component生成fiber，打上插入effectTag，同[`render`](./render.md)流程创建fiber树
-，
     * 如果key不同，为子fiber和子fiber的兄弟fiber打上删除effectTag，将它们加入effect树，为新的子component生成fiber，同[`render`](./render.md)流程创建fiber树
   * 子component为`数组`，则子fiber和子component按照数组顺序进行比较
     * 如果key相同，
-      * 如果type相同, 复制子fiber，同时备份子fiber，为map中的fiber打上删除effectTag，将它加入effect树
+      * 如果type相同, 复制子fiber，同时备份子fiber
       * 如果type不同，为该子fiber打上删除effectTag，将它加入effect树，为新的子component生成fiber，为新的fiber打上插入effectTag
     * 如果key不同，则结束当前数组顺序遍历，把剩余的子fiber的兄弟以key或者index为key暂存在map中，将剩余子component的key和index为key，以数组顺序与暂存map中的子fiber对比
-      * 如果type相同，复制子fiber，同时备份子fiber，把map中的子fiber删除
-      * 如果type不同，则为新的子component生成fiber
-    如果map中还有未删除的子fiber，为该子fiber打上effectTag，将他们加入effect树
+      * 如果map中存在
+        * 如果type相同，复制子fiber，同时备份子fiber，把map中的子fiber删除
+        * 如果type不同，则为新的子component生成fiber
+      * 如果map中不存在，为新的子component生成fiber，为新的fiber打上插入effectTag
+      如果map中还有未删除的子fiber，为该子fiber打上删除effectTag，将他们加入effect树
 
-
-    * ，为子fiber和子fiber的兄弟fiber打上删除effectTag，将它们加入effect树，为新的子component生成fiber，同[`render`](./render.md)流程创建fiber树
 ### 更新dom树
 `completeWork`沿着`beginWork`遍历的逆序遍历，从子fiber向父fiber遍历，直至某个fiber含有兄弟fiber，如果含有兄弟fiber，则结束当前过程，从兄弟fiber进行`beginWork`过程。   
 如果该子fiber为新增加的，则按照[`render`](./render.md)过程操作，   
