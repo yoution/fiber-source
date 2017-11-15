@@ -22,8 +22,9 @@
 ## workLoop
 示例图:   
 ![fiber-trees](./image/update_trees.png)   
+图中为删除componentB，新增componentD。
 ### 更新fiber树
-`beginWork`更新fiber树，深度遍历fiber树，进行更新操作, 直至子fiber不含有pendingWorkPriority。   
+`beginWork`更新fiber树，深度遍历fiber树，进行更新操作。
 父fiber根据不同的tag，执行不同的fiber更新:  
 * **ClassComponent**, 执行componentWillReceiveProps，从updateQueue获取新的state值，执行shouldComponentUpdate，执行componentWillUpdate，为componentDidUpdate打effectTag，为ref打effectTag，执行render生成新的子component，进行子component的diff
 * **HostComponent**, diff当前fiber的props
