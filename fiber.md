@@ -31,32 +31,14 @@ fiber
 ## fiber 类型
 fiber根据component类型生成对应的fiber类型
 
-### IndeterminateComponent
-
-
-### FunctionalComponent
-
-
-### ClassComponent
-type为function,react对象
-
-### HostRoot
-根fiber，无对应的component
-
-### HostComponent
-type为string,如div，span
-### HostText
-
-### CoroutineHandlerPhase
-
-
-### CoroutineComponent
-
-
-### YieldComponent
-
-
-### HostPortal
-
-
-### Fragment
+* **HostRoot** 生成根fiber，相当于container元素生成的component
+* **IndeterminateComponent** type为function，非react对象，相当于render函数，没有react生命周期
+* **FunctionalComponent** 
+* **ClassComponent** component为react对象，含有react对象生命周期
+* **HostComponent** component为string,如div，span
+* **HostText**  component为anoymouns element，如<div>text<span>spanText</span></div>中的text元素
+* **CoroutineHandlerPhase** 
+* **CoroutineComponent** [component类型](./component.md)
+* **YieldComponent**  [component类型](./component.md)
+* **HostPortal**  [component类型](./component.md)
+* **Fragment** 

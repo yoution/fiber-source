@@ -72,7 +72,7 @@
   * **ClassComponent**:删除ref，执行componentWillUnmount
   * **HostComponent**: 删除ref，从父dom删除子dom
   * ...
-* **PlacementAndUpdate**
+* **PlacementAndUpdate**: 插入操作后，更新操作
 * **Update**: 更新操作
   * **HostComponent**: 更新dom的attributre,设置content
 
