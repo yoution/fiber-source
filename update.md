@@ -12,7 +12,10 @@
           if(子fiber) {
             父fiber = completeWork(子fiber)
             创建effect树() 
-            if(父fiber.兄fiber){ break; }
+            if(父fiber.兄fiber){ 
+              父fiber = 父fiber.兄fiber
+              break; 
+            }
           }
         }
       }

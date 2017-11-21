@@ -17,7 +17,7 @@ fiber
 |- memorizedProps component的oldProps
 |- memorizedState component的state
 |- updateQueue setState后的待更新状态
-|- internalContextTag
+|- internalContextTag async更新标记位
 |- effectTag 二进制tag，不同的位数代表不同的值
 |- nextEffect effect tree中的位置
 |- firstEffect effect tree中的位置
