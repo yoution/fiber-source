@@ -32,8 +32,8 @@ fiber根据[component类型](./component.md)生成对应的fiber类型
 
 * **HostRoot** 生成根fiber，相当于container元素生成的component
 * **IndeterminateComponent** type为function，非react对象，相当于render函数，没有react生命周期
-* **FunctionalComponent** 
-* **ClassComponent** react.element
+* **FunctionalComponent** IndeterminateComponent中没有render方法的对象
+* **ClassComponent** react.element或者IndeterminateComponent含有render方法的对象
 * **HostComponent** type为string普通component，如div，span
 * **HostText**  type为string的普通component，且是anoymouns element
 * **CoroutineHandlerPhase** 
