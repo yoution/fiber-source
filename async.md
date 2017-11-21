@@ -35,7 +35,7 @@
 ## async的影响
 `unstable_isAsyncReactComponent`标记在不同的component上，对`render`和`update`过程会产生不同的效果   
 
-| |rootcomponent|子component|
+| |root component|子component|
 |:---:|:---:|:---:|
 |render|异步|同步|
 |update|异步|异步|
