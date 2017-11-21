@@ -6,11 +6,14 @@
   workLoop
     while {
       叶子节点 = beginWork(父fiber，子fiber) 
-      while {
-        if(叶子节点) {
-          兄节点 = completeWork(叶子节点)
+      if(!叶子节点){
+        while(父fiber) {
+          if(子fiber) {
+            父fiber = completeWork(子fiber)
+            创建effect树() 
+            if(父fiber.兄fiber){ break; }
+          }
         }
-        创建effect树() 
       }
     }
     commitAllWork
