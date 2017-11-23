@@ -4,6 +4,7 @@
 * [fiber](./fiber.md)
 * [render](./render.md)
 * [update](./update.md)
+* [error](./error.md)
 * [async](./async.md)
 
 
