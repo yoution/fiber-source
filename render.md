@@ -1,5 +1,5 @@
 # render
-**invokeGuardedCallback**函数调用回调函数`workLoop`，`commitAllHostEffects`, `commitAllLifeCycles`，进行render过程。
+**invokeGuardedCallback**函数调用回调函数`workLoop`，`commitAllHostEffects`, `commitAllLifeCycles`，[`performWorkCatchBlock`](./error.md)进行render过程。
 
 ## 流程图
 ```js

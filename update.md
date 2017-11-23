@@ -1,5 +1,5 @@
 # update
-**invokeGuardedCallback**函数调用回调函数`workLoop`，`commitAllHostEffects`, `commitAllLifeCycles`，进行update过程。   
+**invokeGuardedCallback**函数调用回调函数`workLoop`，`commitAllHostEffects`, `commitAllLifeCycles`，[`performWorkCatchBlock`](./error.md)进行update过程。   
 当某个component执行setState后，会从当前fiber向父fiber遍历，直至根fiber, 设置每个fiber的pendingWorkPriority，标示当前路径需要进行更新。
 
 ## 流程图
